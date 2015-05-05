@@ -194,8 +194,7 @@ angular.module('gettext').directive('translate', ["gettextCatalog", "$parse", "$
                         $compile(newWrapper.contents())(scope);
                         var oldContents = element.contents();
                         var newContents = newWrapper.contents();
-                        $animate.enter(newContents, element);
-                        $animate.leave(oldContents);
+                        oldContents.replaceWith(newContents);
                     }
 
                     if (attrs.translateN) {
