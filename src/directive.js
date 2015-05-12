@@ -59,9 +59,9 @@ angular.module('gettext').directive('translate', function (gettextCatalog, $pars
                         // Swap in the translation
                         var newWrapper = angular.element('<span>' + translated + '</span>');
                         $compile(newWrapper.contents())(scope);
-                        var oldContents = element.contents();
+                        // var oldContents = element.contents();
                         var newContents = newWrapper.contents();
-                        oldContents.replaceWith(newContents);
+                        element.html( newContents );
                     }
 
                     if (attrs.translateN) {
